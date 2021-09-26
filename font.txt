@@ -1,0 +1,14 @@
+WEBSITE TITLE
+@import url("http://fonts.cdnfonts.com/css/portrait?styles=94954");
+font-family: "Portrait", sans-serif;
+
+
+WEBSITE TITLES
+@import url("http://fonts.cdnfonts.com/css/tex-gyre-termes?styles=843,842,841,840");
+font-family: "TeXGyreTermes", sans-serif;
+font-weight: 400;
+
+
+WEBSITE CONTENT
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+font-family: "Josefin Sans Std", sans-serif;

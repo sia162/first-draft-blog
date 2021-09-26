@@ -1,0 +1,73 @@
+@import url("http://fonts.cdnfonts.com/css/tex-gyre-termes?styles=843,842,841,840");
+/* font-family: "TeXGyreTermes", sans-serif;
+font-weight: 400; */
+
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+/* font-family: "Josefin Sans Std", sans-serif; */
+
+.single-blog {
+  flex: 7;
+}
+
+.single-blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 30px;
+  margin: 2px 14px;
+  row-gap: 10px;
+}
+
+.single-post-title {
+  padding: 16px 0px;
+  font-size: 1.5rem;
+  font-family: "TeXGyreTermes", sans-serif;
+  font-weight: 400;
+}
+
+.single-post-info {
+  display: flex;
+  justify-content: space-between;
+  width: 56rem;
+}
+
+.author-time {
+  display: flex;
+  column-gap: 12px;
+}
+
+.author {
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.date-time {
+  font-family: "Josefin Sans Std", sans-serif;
+  font-style: italic;
+}
+
+.single-post-edit-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-icons {
+  font-size: 18px;
+  padding: 0px 7px;
+  color: rgb(169, 169, 169);
+  cursor: pointer;
+}
+
+.single-blog-section img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.single-post-content {
+  padding: 20px;
+  /* text-align: center; */
+  font-size: 1.03rem;
+  font-family: "Josefin Sans Std", sans-serif;
+}

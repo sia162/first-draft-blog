@@ -1,0 +1,52 @@
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+
+.single-blog-link {
+  text-decoration: none;
+  color: black;
+}
+
+.post {
+  padding-top: 27px;
+  padding-left: 18px;
+  padding-bottom: 27px;
+  display: flex;
+  column-gap: 20px;
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.post:hover {
+  background-color: #ebebeb;
+  box-shadow: 5px 5px 0px 5px #80808059 inset;
+}
+
+.post-img {
+  height: 300px;
+  flex: 50;
+}
+
+.post-info {
+  flex: 50 1;
+  width: 447px;
+  padding: 15px 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-categories {
+  display: flex;
+  column-gap: 16px;
+  color: grey;
+  font-size: 16px;
+}
+
+.post-title {
+  font-size: 1.6rem;
+}
+
+.post-date {
+  font-style: italic;
+  color: darkgray;
+}

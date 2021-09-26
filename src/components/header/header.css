@@ -1,0 +1,51 @@
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+
+.header {
+  height: 500px;
+}
+
+.header-img-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerimg {
+  padding: 20px;
+  height: 459px;
+  width: 325px;
+  z-index: 0;
+}
+
+.header-button {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-button button {
+  height: 2rem;
+  width: 28rem;
+  border: none;
+  background-color: rgb(0 0 0 / 53%);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-family: "Josefin Sans Std", sans-serif;
+  font-size: 1.2rem;
+}
+
+.header-button button:hover {
+  background-color: #f7f7f7d5;
+  color: gray;
+}
+
+.headerbackcolor {
+  background-color: #f7f7f7;
+  height: 400px;
+  width: auto;
+  position: relative;
+  top: -24rem;
+  z-index: -1;
+}

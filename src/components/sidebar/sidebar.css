@@ -1,0 +1,63 @@
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std?styles=30113,443");
+@import url("http://fonts.cdnfonts.com/css/tex-gyre-termes?styles=843,842,841,840");
+
+.sidebar {
+  flex: 3;
+  height: 53rem;
+  display: flex;
+  flex-direction: column;
+  border-top: solid 2.5px grey;
+  border-bottom: solid 2.5px grey;
+  background-color: #f7f7f7;
+  padding: 20px 41px 27px;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  position: relative;
+  right: 38%;
+  bottom: 3%;
+  font-family: "TeXGyreTermes", sans-serif;
+  font-weight: 400;
+}
+
+.sidebar-img {
+  height: 425px;
+  width: auto;
+}
+
+.sidebar-para {
+  font-size: 17px;
+  padding: 11px 13px 0px;
+  text-align: center;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.sidebar-list {
+  list-style: none;
+  text-align: center;
+}
+
+.sidebar-list li {
+  display: inline-block;
+  width: 50%;
+  margin-top: 15px;
+  font-size: 19px;
+}
+
+.sidebar-social {
+  padding: 12px 1px 0px;
+}
+
+.sidebar-social .social-icons {
+  padding: 10px;
+}

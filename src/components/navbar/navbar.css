@@ -1,0 +1,81 @@
+@import url("http://fonts.cdnfonts.com/css/portrait?styles=94954");
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+
+.blogname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blogname h3 {
+  font-family: "Portrait", sans-serif;
+  font-weight: 300;
+  font-size: 4rem;
+}
+.blogname h4 {
+  font-family: "Josefin Sans Std", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 7px;
+}
+
+.navbar {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-center ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 19px;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.nav-links {
+  padding: 5px 33px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.nav-center ul li a:hover {
+  color: rgb(79, 79, 79);
+}
+
+.nav-right,
+.nav-left {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-center {
+  flex: 6;
+}
+
+.profileImg {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.social-icons,
+.search-icon {
+  font-size: 20px;
+  padding: 0px 7px;
+  color: rgb(169, 169, 169);
+  cursor: pointer;
+}
+
+.social-icons:hover,
+.search-icon:hover {
+  color: rgb(213, 213, 213);
+}
