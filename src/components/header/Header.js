@@ -1,7 +1,9 @@
+import React from "react";
 import "./header.css";
 import imgthree from "./images/p3.jpg";
 import imgtwo from "./images/p2.jpg";
 import imgfive from "./images/p5.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -13,7 +15,12 @@ const Header = () => {
       </div>
 
       <div className="header-button">
-        <button>Publish Your First Article</button>
+        <button>
+          <Link className="link" to="/write">
+            {" "}
+            Publish Your First Article{" "}
+          </Link>
+        </button>
       </div>
       <div className="headerbackcolor"></div>
     </div>

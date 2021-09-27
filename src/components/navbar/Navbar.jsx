@@ -4,6 +4,8 @@ import "./navbar.css";
 import navimg from "./profile.jpg";
 
 const Navbar = () => {
+  const user = true;
+
   return (
     <div>
       <div className="blogname">
@@ -11,12 +13,14 @@ const Navbar = () => {
         <h4>A BLOG FOR YOUR THOUGHTS</h4>
       </div>
       <div className="navbar">
-        <div className="nav-left">
-          <i className="social-icons fab fa-facebook-square"></i>
-          <i className="social-icons fab fa-instagram-square"></i>
-          <i className="social-icons fab fa-pinterest-square"></i>
-          <i className="social-icons fab fa-twitter-square"></i>
-        </div>
+        {user && (
+          <div className="nav-left">
+            <i className="social-icons fab fa-facebook-square"></i>
+            <i className="social-icons fab fa-instagram-square"></i>
+            <i className="social-icons fab fa-pinterest-square"></i>
+            <i className="social-icons fab fa-twitter-square"></i>
+          </div>
+        )}
 
         <div className="nav-center">
           <ul>
@@ -33,30 +37,45 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link className="nav-links" to="/write">
-                {" "}
-                write.
-              </Link>
+              {user && (
+                <Link className="nav-links" to="/write">
+                  {" "}
+                  write.
+                </Link>
+              )}
             </li>
             <li>
-              <Link className="nav-links" to="/profile">
-                {" "}
-                profile.
-              </Link>
+              {user ? (
+                <Link className="nav-links" to="/profile">
+                  {" "}
+                  profile.
+                </Link>
+              ) : (
+                <Link className="nav-links" to="/login">
+                  login.
+                </Link>
+              )}
             </li>
             <li>
-              <Link className="nav-links" to="/logout">
-                {" "}
-                logout.
-              </Link>
+              {user ? (
+                <Link className="nav-links" to="/logout">
+                  logout.
+                </Link>
+              ) : (
+                <Link className="nav-links" to="/register">
+                  register.
+                </Link>
+              )}
             </li>
           </ul>
         </div>
 
-        <div className="nav-right">
-          <img className="profileImg" src={navimg} alt="none" />
-          <i className="search-icon fas fa-search"></i>
-        </div>
+        {user && (
+          <div className="nav-right">
+            <img className="profileImg" src={navimg} alt="none" />
+            <i className="search-icon fas fa-search"></i>
+          </div>
+        )}
       </div>
     </div>
   );

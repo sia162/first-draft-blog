@@ -1,0 +1,73 @@
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+@import url("http://fonts.cdnfonts.com/css/tex-gyre-termes?styles=843,842,841,840");
+
+.login {
+  display: flex;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 59vh;
+  flex-direction: column;
+  width: 70vw;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  top: 0;
+  border-top: 3px solid grey;
+  background-color: #f7f7f7;
+  padding-top: 26px;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.login-title {
+  font-size: 22px;
+  font-family: "TeXGyreTermes", sans-serif;
+  font-weight: 400;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login-form label {
+  font-size: 20px;
+  padding: 7px 10px;
+}
+
+.login-form input {
+  padding: 7px 11px;
+  width: 356px;
+  border: none;
+  border-bottom: 2px solid grey;
+  background-color: #f7f7f7;
+  margin-bottom: 13px;
+  outline: none;
+}
+
+.login-signup-btns {
+  display: flex;
+  margin-top: 10px;
+  column-gap: 19px;
+  justify-content: space-between;
+}
+
+.ls-btn {
+  width: 74px;
+  font-size: 20px;
+  background-color: darkgrey;
+  border: none;
+  color: #2b2b2b;
+  border-radius: 25px;
+  font-family: "Josefin Sans Std", sans-serif;
+  cursor: pointer;
+  padding-bottom: 4px;
+  outline: none;
+}
+
+.ls-btn:hover {
+  background-color: rgb(88, 88, 88);
+  color: #ececec;
+}

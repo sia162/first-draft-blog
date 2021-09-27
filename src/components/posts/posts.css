@@ -5,6 +5,7 @@
   flex-direction: column;
   border-top: solid 2.6px gray;
   margin: 0px 23px;
+  flex: 7;
 }
 
 .posts-section-title {
@@ -16,6 +17,7 @@
   padding: 25px 1px;
   font-family: "TeXGyreTermes", sans-serif;
   font-weight: 400;
+  width: 90px;
 }
 
 .all-posts {

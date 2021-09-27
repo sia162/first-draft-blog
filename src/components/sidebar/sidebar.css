@@ -4,6 +4,7 @@
 .sidebar {
   flex: 3;
   height: 53rem;
+  width: auto;
   display: flex;
   flex-direction: column;
   border-top: solid 2.5px grey;

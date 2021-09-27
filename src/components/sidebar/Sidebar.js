@@ -3,18 +3,22 @@ import "./sidebar.css";
 import profileimg from "./profile.jpg";
 
 const Sidebar = () => {
+  const user = true;
+
   return (
     <div className="sidebar">
-      <div className="sidebar-items">
-        <span className="sidebar-title">about you.</span>
-        <img className="sidebar-img" src={profileimg} alt="profile-img" />
-        <p className="sidebar-para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-          suscipit nobis nisi a voluptatem sint! Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Omnis atque illo tenetur ducimus
-          laboriosam et ab. Vitae error magnam adipisci! laboriosam et ab.
-        </p>
-      </div>
+      {user && (
+        <div className="sidebar-items">
+          <span className="sidebar-title">about you.</span>
+          <img className="sidebar-img" src={profileimg} alt="profile-img" />
+          <p className="sidebar-para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            suscipit nobis nisi a voluptatem sint! Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Omnis atque illo tenetur ducimus
+            laboriosam et ab. Vitae error magnam adipisci! laboriosam et ab.
+          </p>
+        </div>
+      )}
 
       <div className="sidebar-items">
         <span className="sidebar-title">categories.</span>
