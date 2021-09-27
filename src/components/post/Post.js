@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import postimg from "./p1.jpg";
 import "./post.css";
 
 const Post = () => {
   return (
     <>
-      <Link className="single-blog-link" to="/single-blog">
+      <Link className="link" to="/post/:postId">
         <div className="post">
           <img src={postimg} alt="" className="post-img" />
           <div className="post-info">

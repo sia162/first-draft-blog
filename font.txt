@@ -12,3 +12,6 @@ font-weight: 400;
 WEBSITE CONTENT
 @import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
 font-family: "Josefin Sans Std", sans-serif;
+
+SHADE OF GREY PESENT IN WEBSITE
+background-color: #f7f7f7;

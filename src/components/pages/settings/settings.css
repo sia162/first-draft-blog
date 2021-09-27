@@ -1,0 +1,95 @@
+@import url("http://fonts.cdnfonts.com/css/josefin-sans-std");
+@import url("http://fonts.cdnfonts.com/css/tex-gyre-termes?styles=843,842,841,840");
+
+.settings {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.settings-wrapper {
+  flex: 7;
+  border-top: 3px solid grey;
+  margin: 0px 20px;
+  background-color: #f7f7f7;
+}
+
+.settings-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 25px;
+  margin-top: 23px;
+  font-family: "TeXGyreTermes", sans-serif;
+  font-weight: 400;
+}
+
+.settings-update-title {
+  font-size: 28px;
+}
+
+.settings-delete-title {
+  color: #c90000;
+}
+
+.settings-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-form label {
+  font-size: 19px;
+  letter-spacing: 0px;
+  color: grey;
+  margin-top: 12px;
+  font-family: "TeXGyreTermes", sans-serif;
+  font-weight: 400;
+}
+
+.settings-form input {
+  padding: 10px 2px;
+  border: none;
+  border-bottom: 2px solid grey;
+  font-size: 19px;
+  margin-bottom: 20px;
+  outline: none;
+  background-color: #f7f7f7;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.settings-pp {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  column-gap: 6px;
+  margin-top: 15px;
+}
+
+.settings-pp img {
+  height: 145px;
+}
+
+.settings-pp-icon {
+  color: grey;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.settings-submit {
+  width: 110px;
+  font-size: 1.2rem;
+  padding: 8px 28px;
+  background-color: darkgrey;
+  border: none;
+  color: #2b2b2b;
+  border-radius: 21px;
+  font-family: "Josefin Sans Std", sans-serif;
+  cursor: pointer;
+}
+
+.settings-submit:hover {
+  background-color: rgb(88, 88, 88);
+  color: #ececec;
+}
