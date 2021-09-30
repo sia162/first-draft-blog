@@ -9,15 +9,10 @@ const bcrypt = require("bcryptjs");
 // user fetch to get data
 const fetchuser = require("../middleware/jwtcheckfetch");
 
-// // jwt authentication
-// var jwt = require("jsonwebtoken");
-// const JWT_SECRET = process.env.JWT_SECRET;
-
 // UPDATE USER: PUT "/api/users//updateuser/:id" --> login needed
 router.put("/updateuser/:id", fetchuser, async (req, res) => {
   try {
-    let userId = req.newUser.id;
-    // if (req.body.userId === req.params.id)
+    let userId = req.user.id;
 
     if (req.params.id === userId) {
       try {
@@ -59,7 +54,7 @@ router.put("/updateuser/:id", fetchuser, async (req, res) => {
 // DELETE USER: DELETE /api/users/deleteuser/:id --> in body username, userid and password send
 router.delete("/deleteuser/:id", fetchuser, async (req, res) => {
   try {
-    let userId = req.newUser.id;
+    let userId = req.user.id;
     if (req.params.id === userId) {
       try {
         const user = await User.findById(req.params.id);
@@ -84,9 +79,10 @@ router.delete("/deleteuser/:id", fetchuser, async (req, res) => {
 
 router.post("/getuser", fetchuser, async (req, res) => {
   try {
-    let userId = req.newUser.id;
+    let userId = req.user.id;
+    // let userId = req.user;
     const user = await User.findById(userId).select("-password");
-    res.status(200).json(user);
+    res.status(200).json(userId);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server Error!");
