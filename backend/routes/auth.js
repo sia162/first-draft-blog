@@ -27,8 +27,8 @@ router.post(
     }
 
     try {
-      let newUser = await User.findOne({ email: req.body.email });
-      if (newUser) {
+      let user = await User.findOne({ email: req.body.email });
+      if (user) {
         success = false;
         return res.status(400).json({
           success,
@@ -36,8 +36,8 @@ router.post(
         });
       }
 
-      newUser = await User.findOne({ username: req.body.username });
-      if (newUser) {
+      user = await User.findOne({ username: req.body.username });
+      if (user) {
         success = false;
         return res.status(400).json({
           success,
@@ -50,7 +50,7 @@ router.post(
       securePass = await bcrypt.hash(req.body.password, salt);
 
       // creating new user in User Schema
-      newUser = await User.create({
+      user = await User.create({
         username: req.body.username,
         email: req.body.email,
         password: securePass,
@@ -58,13 +58,14 @@ router.post(
 
       // jwt authentication
       const data = {
-        newUser: {
-          id: newUser.id,
+        user: {
+          id: user.id,
+          username: user.username,
         },
       };
       const authtoken = jwt.sign(data, JWT_SECRET); //return a token
       success = true;
-      res.json({ success, authtoken, newUser });
+      res.json({ success, authtoken, user });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error!");
@@ -107,6 +108,7 @@ router.post(
       const data = {
         user: {
           id: user.id,
+          username: user.username,
         },
       };
       const authtoken = jwt.sign(data, JWT_SECRET); //return a token
