@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./singleblog.css";
-import blogimg from "./p1.jpg";
+import { useLocation } from "react-router";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SingleBlog = () => {
+  const location = useLocation();
+  const pathtopost = location.pathname.split("/")[2];
+  const [singlePost, setSinglePost] = useState([]);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get(
+        "http://localhost:5000/api/posts/" + pathtopost
+      );
+      console.log(res);
+      setSinglePost(res.data);
+    };
+
+    getPost();
+  }, [pathtopost]);
+
   return (
     <div className="single-blog">
       <div className="single-blog-section">
         <div className="single-post-head">
-          <div className="single-post-title">Lorem ipsum dolor sit.</div>
+          <div className="single-post-title">{singlePost.title}.</div>
           <div className="single-post-info">
             <div className="author-time">
               <div className="author">
-                by - <span>Siya</span>
+                by -
+                <Link to={`/?user=${singlePost.username}`} className="link">
+                  <span>{singlePost.username}</span>
+                </Link>
               </div>
-              <div className="date-time">1 hour ago</div>
+              <div className="date-time">
+                {new Date(singlePost.createdAt).toDateString()}
+              </div>
             </div>
 
             <div className="single-post-edit-icons">
@@ -23,56 +46,9 @@ const SingleBlog = () => {
           </div>
         </div>
 
-        <img src={blogimg} alt="bloging" />
+        {singlePost.photo && <img src={singlePost.photo} alt="bloging" />}
 
-        <div className="single-post-content">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, non
-          dolorum omnis natus quis doloribus autem eligendi assumenda, ad rerum
-          iusto facere, voluptate temporibus consequatur magni ducimus alias
-          laudantium repudiandae id animi. Amet reprehenderit commodi illo vitae
-          rem fuga expedita! Molestias corporis officia libero ducimus deserunt
-          exercitationem, est ex at suscipit sapiente ipsam officiis labore
-          iusto aut culpa tempora nam delectus, voluptate perferendis omnis?
-          Aperiam mollitia deserunt perferendis, voluptatem maxime libero error
-          pariatur quidem quo porro illo, magni dolore consequatur, corrupti
-          adipisci quae nobis nisi perspiciatis ex laboriosam eos nam! Quasi
-          nisi tempore cumque aut illum vero voluptatem sequi recusandae. Lorem
-          ipsum dolor sit, amet consectetur adipisicing elit. Quas, non dolorum
-          omnis natus quis doloribus autem eligendi assumenda, ad rerum iusto
-          facere, voluptate temporibus consequatur magni ducimus alias
-          laudantium repudiandae id animi. Amet reprehenderit commodi illo vitae
-          rem fuga expedita! Molestias corporis officia libero ducimus deserunt
-          exercitationem, est ex at suscipit sapiente ipsam officiis labore
-          iusto aut culpa tempora nam delectus, voluptate perferendis omnis?
-          Aperiam mollitia deserunt perferendis, voluptatem maxime libero error
-          pariatur quidem quo porro illo, magni dolore consequatur, corrupti
-          adipisci quae nobis nisi perspiciatis ex laboriosam eos nam! Quasi
-          nisi tempore cumque aut illum vero voluptatem sequi recusandae. Lorem
-          <br />
-          <br />
-          ipsum dolor sit, amet consectetur adipisicing elit. Quas, non dolorum
-          omnis natus quis doloribus autem eligendi assumenda, ad rerum iusto
-          facere, voluptate temporibus consequatur magni ducimus alias
-          laudantium repudiandae id animi. Amet reprehenderit commodi illo vitae
-          rem fuga expedita! Molestias corporis officia libero ducimus deserunt
-          exercitationem, est ex at suscipit sapiente ipsam officiis labore
-          iusto aut culpa tempora nam delectus, voluptate perferendis omnis?
-          Aperiam mollitia deserunt perferendis, voluptatem maxime libero error
-          pariatur quidem quo porro illo, magni dolore consequatur, corrupti
-          adipisci quae nobis nisi perspiciatis ex laboriosam eos nam! Quasi
-          nisi tempore cumque aut illum vero voluptatem sequi recusandae. Lorem
-          ipsum dolor sit, amet consectetur adipisicing elit. Quas, non dolorum
-          omnis natus quis doloribus autem eligendi assumenda, ad rerum iusto
-          facere, voluptate temporibus consequatur magni ducimus alias
-          laudantium repudiandae id animi. Amet reprehenderit commodi illo vitae
-          rem fuga expedita! Molestias corporis officia libero ducimus deserunt
-          exercitationem, est ex at suscipit sapiente ipsam officiis labore
-          iusto aut culpa tempora nam delectus, voluptate perferendis omnis?
-          Aperiam mollitia deserunt perferendis, voluptatem maxime libero error
-          pariatur quidem quo porro illo, magni dolore consequatur, corrupti
-          adipisci quae nobis nisi perspiciatis ex laboriosam eos nam! Quasi
-          nisi tempore cumque aut illum vero voluptatem sequi recusandae.
-        </div>
+        <div className="single-post-content">{singlePost.desc}</div>
       </div>
     </div>
   );

@@ -25,6 +25,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file has been uploaded");
 });
 
+// express package cors -> helps to fetch api from backend in frontend
+var cors = require("cors");
+app.use(cors());
+
 // mediator
 app.use(express.json());
 // available routes
