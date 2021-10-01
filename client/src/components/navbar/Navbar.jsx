@@ -4,7 +4,7 @@ import "./navbar.css";
 import navimg from "./profile.jpg";
 
 const Navbar = () => {
-  const user = true;
+  const user = false;
 
   return (
     <div>

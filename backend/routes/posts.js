@@ -42,6 +42,17 @@ router.get("/fetchposts", fetchuser, async (req, res) => {
   }
 });
 
+// GET A POST: GET "/api/posts/post/:id" --> login needed
+router.get("/:id", async (req, res) => {
+  try {
+    let post = await Post.findById(req.params.id);
+    res.status(200).json(post);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
 // CREATE POST: POST "/api/posts/createpost" --> login needed
 router.post("/createpost", fetchuser, async (req, res) => {
   try {

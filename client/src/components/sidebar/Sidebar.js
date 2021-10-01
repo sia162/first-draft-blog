@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./sidebar.css";
 import profileimg from "./profile.jpg";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const user = true;
+  const user = false;
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      const res = await axios.get(
+        "http://localhost:5000/api/categories/getallcategories"
+      );
+      setCategory(res.data);
+    };
+
+    getCategories();
+  }, []);
 
   return (
     <div className="sidebar">
@@ -23,12 +37,13 @@ const Sidebar = () => {
       <div className="sidebar-items">
         <span className="sidebar-title">categories.</span>
         <ul className="sidebar-list">
-          <li>Article</li>
-          <li>Poetry</li>
-          <li>Lifestyle</li>
-          <li>Music</li>
-          <li>Sport</li>
-          <li>Tech</li>
+          {category.map((cat) => {
+            return (
+              <Link to={`/?cat=${cat.name}`} className="link">
+                <li key={cat._id}>{cat.name}</li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
 

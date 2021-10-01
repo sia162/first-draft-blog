@@ -7,11 +7,21 @@ const Login = () => {
     <div className="login">
       <div className="login-title">login here.</div>
       <form className="login-form">
-        <label>email.</label>
-        <input type="text" placeholder="enter your email." />
+        <label>useraname.</label>
+        <input
+          name="username"
+          id="username"
+          type="text"
+          placeholder="enter your username."
+        />
 
         <label>password.</label>
-        <input type="password" placeholder="enter your password." />
+        <input
+          name="password"
+          id="password"
+          type="password"
+          placeholder="enter your password."
+        />
 
         <div className="login-signup-btns">
           <button className="ls-btn login-btn">login.</button>

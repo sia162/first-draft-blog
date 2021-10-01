@@ -10,7 +10,7 @@ import Write from "./components/pages/write/Write.js";
 import Register from "./components/pages/register/Register.js";
 
 function App() {
-  const user = true;
+  const user = false;
 
   return (
     <div>
