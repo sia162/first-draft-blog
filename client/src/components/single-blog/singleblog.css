@@ -21,7 +21,7 @@ font-weight: 400; */
 
 .single-post-title {
   padding: 16px 0px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: "TeXGyreTermes", sans-serif;
   font-weight: 400;
 }
@@ -68,6 +68,47 @@ font-weight: 400; */
 .single-post-content {
   padding: 20px;
   /* text-align: center; */
-  font-size: 1.03rem;
+  font-size: 1.6rem;
   font-family: "Josefin Sans Std", sans-serif;
+}
+
+.single-post-title-update {
+  margin-left: 21px;
+  margin-bottom: 13px;
+  font-size: 2rem;
+  width: 90%;
+  padding: 11px 4px;
+  border: none;
+  font-family: "Josefin Sans Std", sans-serif;
+  background-color: #f7f7f7;
+  outline: none;
+}
+
+.single-post-content-update {
+  height: auto;
+  margin-left: -37px;
+  margin-bottom: 13px;
+  font-size: 2rem;
+  width: 90%;
+  padding: 11px 4px;
+  border: none;
+  font-family: "Josefin Sans Std", sans-serif;
+  background-color: #f7f7f7;
+  outline: none;
+}
+
+.updatePostBtn {
+  font-size: 1.2rem;
+  padding: 8px 28px;
+  background-color: darkgrey;
+  border: none;
+  color: #2b2b2b;
+  border-radius: 21px;
+  font-family: "Josefin Sans Std", sans-serif;
+  cursor: pointer;
+}
+
+.updatePostBtn:hover {
+  background-color: rgb(88, 88, 88);
+  color: #ececec;
 }

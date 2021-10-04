@@ -7,19 +7,23 @@ import "./login.css";
 const Login = () => {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("/api/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
-      console.log(res.data.user);
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.user });
+      // console.log(res.data);
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload: res.data.user,
+        authtoken: res.data.authtoken,
+      });
     } catch (error) {
       dispatch({ type: "LOGIN_FAILURE" });
     }
@@ -48,7 +52,11 @@ const Login = () => {
         />
 
         <div className="login-signup-btns">
-          <button className="ls-btn login-btn" type="submit">
+          <button
+            className="ls-btn login-btn"
+            type="submit"
+            disabled={isFetching}
+          >
             login.
           </button>
           <button className="ls-btn register-in-btn">

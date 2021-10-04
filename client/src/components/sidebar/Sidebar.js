@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./sidebar.css";
-import profileimg from "./profile.jpg";
+
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/login Context/Context";
 
 const Sidebar = () => {
-  const user = false;
+  const { user } = useContext(Context);
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get(
-        "http://localhost:5000/api/categories/getallcategories"
-      );
+      const res = await axios.get("/api/categories/getallcategories");
       setCategory(res.data);
     };
 
@@ -24,7 +23,16 @@ const Sidebar = () => {
       {user && (
         <div className="sidebar-items">
           <span className="sidebar-title">about you.</span>
-          <img className="sidebar-img" src={profileimg} alt="profile-img" />
+          <span className="sidebar-username">- {user.username}</span>
+          <img
+            className="sidebar-img"
+            src={
+              user.profilePic
+                ? user.profilePic
+                : "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png"
+            }
+            alt="profile-img"
+          />
           <p className="sidebar-para">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
             suscipit nobis nisi a voluptatem sint! Lorem ipsum dolor sit amet,
@@ -39,8 +47,8 @@ const Sidebar = () => {
         <ul className="sidebar-list">
           {category.map((cat) => {
             return (
-              <Link to={`/?cat=${cat.name}`} className="link">
-                <li key={cat._id}>{cat.name}</li>
+              <Link key={cat._id} to={`/?cat=${cat.name}`} className="link">
+                <li>{cat.name}</li>
               </Link>
             );
           })}

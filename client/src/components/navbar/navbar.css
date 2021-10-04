@@ -45,7 +45,8 @@
 }
 
 .nav-center ul li a:hover {
-  color: rgb(79, 79, 79);
+  color: rgb(159, 159, 159);
+  border-bottom: 1px solid;
 }
 
 .nav-right,
@@ -78,4 +79,8 @@
 .social-icons:hover,
 .search-icon:hover {
   color: rgb(213, 213, 213);
+}
+
+#logoutlink:hover {
+  color: rgb(243, 32, 32);
 }

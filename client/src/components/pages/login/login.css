@@ -71,3 +71,8 @@
   background-color: rgb(88, 88, 88);
   color: #ececec;
 }
+
+.login-btn:disabled {
+  cursor: not-allowed;
+  background-color: rgb(209, 208, 208);
+}

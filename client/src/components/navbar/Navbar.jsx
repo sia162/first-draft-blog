@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/login Context/Context";
 import "./navbar.css";
-import navimg from "./profile.jpg";
 
 const Navbar = () => {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
 
   return (
     <div>
@@ -56,13 +60,19 @@ const Navbar = () => {
                 </Link>
               )}
             </li>
+
             <li>
               {user ? (
-                <Link className="nav-links" to="/logout">
+                <Link
+                  to="/"
+                  className="nav-links"
+                  id="logoutlink"
+                  onClick={handleLogout}
+                >
                   logout.
                 </Link>
               ) : (
-                <Link className="nav-links" to="/register">
+                <Link className="nav-links link" to="/register">
                   register.
                 </Link>
               )}
@@ -72,7 +82,15 @@ const Navbar = () => {
 
         {user && (
           <div className="nav-right">
-            <img className="profileImg" src={navimg} alt="none" />
+            {user.profilePic ? (
+              <img className="profileImg" src={user.profilePic} alt="none" />
+            ) : (
+              <img
+                className="profileImg"
+                src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png"
+                alt="none"
+              />
+            )}
             <i className="search-icon fas fa-search"></i>
           </div>
         )}
