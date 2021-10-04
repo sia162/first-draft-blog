@@ -2,9 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5000;
 
-const dotenv = require("dotenv");
-dotenv.config();
-
 const connectToMongo = require("./database");
 connectToMongo();
 
@@ -25,9 +22,22 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file has been uploaded");
 });
 
+const path = require("path");
+app.use("/images", express.static(path.join(__dirname, "/images")));
+
 // express package cors -> helps to fetch api from backend in frontend
 var cors = require("cors");
 app.use(cors());
+
+// const router = express.Router();
+// router.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 // mediator
 app.use(express.json());

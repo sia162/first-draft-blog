@@ -31,9 +31,18 @@
   font-weight: 400;
 }
 
+.sidebar-username {
+  font-size: 1.5rem;
+  position: relative;
+  right: -41%;
+  bottom: 2%;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
 .sidebar-img {
   height: 425px;
-  width: auto;
+  width: 382px;
+  object-fit: cover;
 }
 
 .sidebar-para {
