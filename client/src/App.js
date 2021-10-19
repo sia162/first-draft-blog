@@ -9,6 +9,8 @@ import Single from "./components/pages/single-blog-page/Single.js";
 import Write from "./components/pages/write/Write.js";
 import Register from "./components/pages/register/Register.js";
 import { Context } from "./context/login Context/Context.js";
+import Profile from "./components/pages/profile/Profile.js";
+import About from "./components/pages/about/About.js";
 
 function App() {
   const { user } = useContext(Context);
@@ -37,6 +39,14 @@ function App() {
 
           <Route exact path="/write">
             {user ? <Write /> : <Register />}
+          </Route>
+
+          <Route exact path="/profile">
+            {user && <Profile />}
+          </Route>
+
+          <Route exact path="/about">
+            <About />
           </Route>
 
           <Route exact path="/post/:postId">

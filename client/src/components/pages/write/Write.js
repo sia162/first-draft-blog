@@ -8,8 +8,11 @@ const Write = () => {
   const [postContent, setPostContent] = useState({
     title: "",
     desc: "",
+    category: "",
   });
   const [file, setFile] = useState(null);
+
+  const [writeerror, setWriteerror] = useState(false);
 
   // HANDLE PUBLISH POST
   const handlePublishPost = async (e) => {
@@ -18,6 +21,7 @@ const Write = () => {
     const newPost = {
       title: postContent.title,
       desc: postContent.desc,
+      categories: postContent.category,
     };
 
     if (file) {
@@ -61,6 +65,12 @@ const Write = () => {
   return (
     <div>
       <form className="write-form" onSubmit={handlePublishPost}>
+        {writeerror && (
+          <div className="write-error-message">
+            title and descripton cannot be empty.
+          </div>
+        )}
+
         <div className="write-form-group">
           <label htmlFor="file-input">
             <i className="write-icon fas fa-plus"></i>
@@ -72,6 +82,7 @@ const Write = () => {
             name="file-input"
             onChange={(e) => setFile(e.target.files[0])}
           />
+
           <input
             name="title"
             type="text"
@@ -79,6 +90,14 @@ const Write = () => {
             className="write-input"
             autoFocus={true}
             onChange={onchange}
+          />
+          <input
+            name="category"
+            type="text"
+            placeholder="Category"
+            className="write-input"
+            onChange={onchange}
+            style={{ fontSize: "25px", width: "343px" }}
           />
         </div>
         {file && (
@@ -88,7 +107,6 @@ const Write = () => {
             alt="write-img"
           />
         )}
-
         <div className="write-form-group-content">
           <textarea
             placeholder="Tell your story..."
@@ -97,9 +115,20 @@ const Write = () => {
             name="desc"
             onChange={onchange}
           ></textarea>
-          <button className="write-submit" type="submit">
-            Publish
-          </button>
+          {postContent.title && postContent.desc ? (
+            <button className="write-submit" type="submit">
+              Publish
+            </button>
+          ) : (
+            <button
+              className="disable-btn"
+              onClick={() => {
+                setWriteerror(true);
+              }}
+            >
+              Publish
+            </button>
+          )}
         </div>
       </form>
     </div>

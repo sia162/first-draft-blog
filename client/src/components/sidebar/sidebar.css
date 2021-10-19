@@ -10,7 +10,7 @@
   border-top: solid 2.5px grey;
   border-bottom: solid 2.5px grey;
   background-color: #f7f7f7;
-  padding: 20px 41px 27px;
+  padding: 20px 23px 27px;
   font-family: "Josefin Sans Std", sans-serif;
 }
 
@@ -34,9 +34,10 @@
 .sidebar-username {
   font-size: 1.5rem;
   position: relative;
-  right: -41%;
-  bottom: 2%;
+  right: 40%;
+  bottom: 3%;
   font-family: "Josefin Sans Std", sans-serif;
+  font-style: italic;
 }
 
 .sidebar-img {

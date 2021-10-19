@@ -8,6 +8,7 @@ import { Context } from "../../context/login Context/Context";
 const Sidebar = () => {
   const { user } = useContext(Context);
   const [category, setCategory] = useState([]);
+  const PF = "http://localhost:5000/images/";
 
   useEffect(() => {
     const getCategories = async () => {
@@ -23,12 +24,12 @@ const Sidebar = () => {
       {user && (
         <div className="sidebar-items">
           <span className="sidebar-title">about you.</span>
-          <span className="sidebar-username">- {user.username}</span>
+          <span className="sidebar-username">{user.username}</span>
           <img
             className="sidebar-img"
             src={
               user.profilePic
-                ? user.profilePic
+                ? PF + user.profilePic
                 : "https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png"
             }
             alt="profile-img"

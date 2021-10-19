@@ -29,6 +29,10 @@ const SingleBlog = () => {
     getPost();
   }, [pathtopost]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // HANDLE DELETE POST
   const handleDeletePost = async () => {
     try {
@@ -83,9 +87,11 @@ const SingleBlog = () => {
           <div className="single-post-info">
             <div className="author-time">
               <div className="author">
-                by -
+                By {""}
                 <Link to={`/?user=${singlePost.username}`} className="link">
-                  <span>{singlePost.username}</span>
+                  <span style={{ color: "#8c8b8b", fontStyle: "italic" }}>
+                    {singlePost.username}
+                  </span>
                 </Link>
               </div>
               <div className="date-time">
