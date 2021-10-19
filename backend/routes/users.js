@@ -55,6 +55,7 @@ router.put("/updateuser/:id", fetchuser, async (req, res) => {
 router.delete("/deleteuser/:id", fetchuser, async (req, res) => {
   try {
     let userId = req.user.id;
+
     if (req.params.id === userId) {
       try {
         const user = await User.findById(req.params.id);
@@ -76,7 +77,6 @@ router.delete("/deleteuser/:id", fetchuser, async (req, res) => {
 });
 
 //  GET USER: GET localhost:5000/api/users/getuser/:id --> in body username, userid and password send
-
 router.post("/getuser", fetchuser, async (req, res) => {
   try {
     let userId = req.user.id;

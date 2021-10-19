@@ -29,16 +29,6 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 var cors = require("cors");
 app.use(cors());
 
-// const router = express.Router();
-// router.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
-
 // mediator
 app.use(express.json());
 // available routes

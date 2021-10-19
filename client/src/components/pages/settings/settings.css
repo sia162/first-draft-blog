@@ -31,6 +31,7 @@
 
 .settings-delete-title {
   color: #c90000;
+  cursor: pointer;
 }
 
 .settings-form {
@@ -92,4 +93,15 @@
 .settings-submit:hover {
   background-color: rgb(88, 88, 88);
   color: #ececec;
+}
+
+.settings-disable-btn {
+  width: 123px;
+  font-size: 1rem;
+  padding: 9px 2px;
+  background-color: rgb(201 16 24);
+  border: none;
+  color: #000000;
+  border-radius: 21px;
+  font-family: "Josefin Sans Std", sans-serif;
 }

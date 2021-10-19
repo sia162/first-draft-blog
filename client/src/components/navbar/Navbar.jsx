@@ -5,6 +5,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -82,15 +83,22 @@ const Navbar = () => {
 
         {user && (
           <div className="nav-right">
-            {user.profilePic ? (
-              <img className="profileImg" src={user.profilePic} alt="none" />
-            ) : (
-              <img
-                className="profileImg"
-                src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png"
-                alt="none"
-              />
-            )}
+            <Link to="/settings">
+              {user.profilePic ? (
+                <img
+                  className="profileImg"
+                  src={PF + user.profilePic}
+                  alt="none"
+                />
+              ) : (
+                <img
+                  className="profileImg"
+                  src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png"
+                  alt="none"
+                />
+              )}
+            </Link>
+
             <i className="search-icon fas fa-search"></i>
           </div>
         )}

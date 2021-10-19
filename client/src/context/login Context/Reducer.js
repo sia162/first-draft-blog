@@ -28,6 +28,25 @@ const Reducer = (state, action) => {
         isFetching: false,
         error: false,
       };
+    case "UPDATE_START":
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case "UPDATE_SUCCESS":
+      return {
+        user: action.payload,
+        authtoken: state.authtoken,
+        isFetching: false,
+        error: false,
+      };
+    case "UPDATE_FAILURE":
+      return {
+        user: state.user,
+        authtoken: state.authtoken,
+        isFetching: false,
+        error: true,
+      };
     default:
       return state;
   }

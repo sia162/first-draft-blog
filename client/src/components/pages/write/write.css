@@ -80,3 +80,25 @@
   background-color: rgb(88, 88, 88);
   color: #ececec;
 }
+
+.disable-btn {
+  position: relative;
+  bottom: 12.5rem;
+  right: 28px;
+  font-size: 1.2rem;
+  padding: 8px 28px;
+  background-color: rgb(201 16 24);
+  border: none;
+  color: #000000;
+  border-radius: 21px;
+  font-family: "Josefin Sans Std", sans-serif;
+}
+
+.write-error-message {
+  padding: 20px;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
