@@ -7,10 +7,24 @@
 
   .single-post-title {
     margin: 10px 24px;
+    text-align: center;
   }
 
   .single-post-info {
-    width: 12rem;
+    width: 18rem;
     margin: 10px 55px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 386px) {
+  .single-post-head {
+    width: 261px;
+  }
+}
+
+@media (max-width: 780px) {
+  .single-blog-section img {
+    height: 277px;
   }
 }
