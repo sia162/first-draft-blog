@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import "./register.css";
 import axios from "axios";
 
+import "../../../responsive/register-responsive.css";
+
 const Register = () => {
   let [credentials, setCredentials] = useState({
     username: "",

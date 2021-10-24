@@ -1,0 +1,9 @@
+@media (max-width: 574px) {
+  .register {
+    width: 88vw;
+  }
+
+  .register-form input {
+    width: 175px;
+  }
+}
