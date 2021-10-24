@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./about.css";
+import "../../../responsive/about-responsive.css";
 import { init, sendForm } from "emailjs-com";
 import { useForm } from "react-hook-form";
 require("dotenv").config();

@@ -43,6 +43,10 @@
     height: 196px;
     width: 157px;
   }
+
+  .nav-center ul {
+    padding: 17px 1px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -85,10 +89,6 @@
 }
 
 @media (max-width: 590px) {
-  .nav-links {
-    padding: 5px 12px;
-  }
-
   .header-button {
     top: 67%;
   }
@@ -124,5 +124,9 @@
 
   .sidebar-para {
     width: 217px;
+  }
+
+  .nav-links {
+    padding: 5px 13px;
   }
 }

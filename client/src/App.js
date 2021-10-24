@@ -1,6 +1,3 @@
-import "./responsive/home-reponsive.css";
-import "./responsive/about-responsive.css";
-
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -14,6 +11,8 @@ import Register from "./components/pages/register/Register.js";
 import { Context } from "./context/login Context/Context.js";
 import Profile from "./components/pages/profile/Profile.js";
 import About from "./components/pages/about/About.js";
+
+import "./responsive/home-reponsive.css";
 
 function App() {
   const { user } = useContext(Context);
