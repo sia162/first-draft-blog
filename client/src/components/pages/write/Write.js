@@ -3,6 +3,8 @@ import "./write.css";
 import axios from "axios";
 // import { Context } from "../../../context/login Context/Context";
 
+import "../../../responsive/write-responsive.css";
+
 const Write = () => {
   // const { user } = useContext(Context);
   const [postContent, setPostContent] = useState({
@@ -95,9 +97,8 @@ const Write = () => {
             name="category"
             type="text"
             placeholder="Category"
-            className="write-input"
+            className="write-cat write-input "
             onChange={onchange}
-            style={{ fontSize: "25px", width: "343px" }}
           />
         </div>
         {file && (
