@@ -7,6 +7,8 @@ font-weight: 400; */
 
 .single-blog {
   flex: 7;
+  padding: 1px 7px;
+  margin: 2px 6px;
 }
 
 .single-blog-section {
@@ -19,6 +21,12 @@ font-weight: 400; */
   row-gap: 10px;
 }
 
+.single-post-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .single-post-title {
   padding: 16px 0px;
   font-size: 1.8rem;
@@ -29,7 +37,7 @@ font-weight: 400; */
 .single-post-info {
   display: flex;
   justify-content: space-between;
-  width: 56rem;
+  width: 55rem;
 }
 
 .author-time {
@@ -73,10 +81,9 @@ font-weight: 400; */
 }
 
 .single-post-title-update {
-  margin-left: 21px;
   margin-bottom: 13px;
   font-size: 2rem;
-  width: 90%;
+  width: auto;
   padding: 11px 4px;
   border: none;
   font-family: "Josefin Sans Std", sans-serif;
@@ -86,10 +93,9 @@ font-weight: 400; */
 
 .single-post-content-update {
   height: auto;
-  margin-left: -37px;
   margin-bottom: 13px;
   font-size: 2rem;
-  width: 90%;
+  width: 100%;
   padding: 11px 4px;
   border: none;
   font-family: "Josefin Sans Std", sans-serif;
