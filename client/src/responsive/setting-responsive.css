@@ -1,0 +1,9 @@
+@media (max-width: 1378px) {
+  .settings {
+    flex-direction: column;
+  }
+
+  .settings-update-title {
+    font-size: 22px;
+  }
+}
