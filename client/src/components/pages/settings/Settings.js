@@ -4,6 +4,8 @@ import "./settings.css";
 import { Context } from "../../../context/login Context/Context";
 import axios from "axios";
 
+import "../../../responsive/setting-responsive.css";
+
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
   const [file, setFile] = useState(null);
