@@ -1,0 +1,16 @@
+@media (max-width: 1378px) {
+  .single-blog-page {
+    flex-direction: column;
+    row-gap: 0px;
+    margin: 0;
+  }
+
+  .single-post-title {
+    margin: 10px 24px;
+  }
+
+  .single-post-info {
+    width: 12rem;
+    margin: 10px 55px;
+  }
+}
