@@ -102,3 +102,9 @@
   justify-content: center;
   color: red;
 }
+
+.write-cat {
+  font-size: 25px;
+  width: 213px;
+  margin-right: 51px;
+}
