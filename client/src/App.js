@@ -1,3 +1,6 @@
+import "./responsive/home-reponsive.css";
+import "./responsive/about-responsive.css";
+
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
