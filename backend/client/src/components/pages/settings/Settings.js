@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import Sidebar from "../../sidebar/Sidebar";
 import "./settings.css";
 import { Context } from "../../../context/login Context/Context";
-import axios from "axios";
 
 import "../../../responsive/setting-responsive.css";
+import { axiosInstance } from "../../../config";
 
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
@@ -40,7 +40,7 @@ const Settings = () => {
       updatedUser.profilePic = filename;
 
       try {
-        await axios.post("/api/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (error) {
         console.error(error.message);
       }
@@ -48,7 +48,7 @@ const Settings = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/users/updateuser/${user._id}`,
+        `https://first-draft-blog.herokuapp.com/api/users/updateuser/${user._id}`,
         {
           method: "PUT",
           headers: {

@@ -3,7 +3,7 @@ import "./home.css";
 import Header from "../../header/Header";
 import Posts from "../../posts/Posts";
 import Sidebar from "../../sidebar/Sidebar";
-import axios from "axios";
+import { axiosInstance } from "../../../config";
 import { useLocation } from "react-router";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/api/posts" + search);
+        const res = await axiosInstance.get("/api/posts" + search);
         setPosts(res.data);
       } catch (error) {
         console.log(error);
