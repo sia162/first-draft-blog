@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../../config";
 import "./profile.css";
 
 const Profile = () => {
@@ -11,7 +11,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/api/posts/fetchposts", {
+        const res = await axiosInstance.get("/posts/fetchposts", {
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
           },

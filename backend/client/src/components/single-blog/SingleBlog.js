@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/login Context/Context";
 import { useHistory } from "react-router-dom";
+import { axiosInstance } from "../../config";
 
 const SingleBlog = () => {
   const PF = "http://localhost:5000/images/"; //npm i path --> backend
@@ -22,7 +23,7 @@ const SingleBlog = () => {
   useEffect(() => {
     const getPost = async () => {
       try {
-        const res = await axios.get("/api/posts/" + pathtopost);
+        const res = await axiosInstance.get("/posts/" + pathtopost);
         setSinglePost(res.data);
         setTitleUpdate(res.data.title);
         setDescUpdate(res.data.desc);
@@ -40,14 +41,11 @@ const SingleBlog = () => {
   // HANDLE DELETE POST
   const handleDeletePost = async () => {
     try {
-      await axios.delete(
-        `http://localhost:5000/api/posts/deletepost/${singlePost._id}`,
-        {
-          headers: {
-            "auth-token": localStorage.getItem("auth-token"),
-          },
-        }
-      );
+      await axiosInstance.delete(`/posts/deletepost/${singlePost._id}`, {
+        headers: {
+          "auth-token": localStorage.getItem("auth-token"),
+        },
+      });
       history.push("/");
     } catch (error) {}
   };
@@ -55,8 +53,8 @@ const SingleBlog = () => {
   // HANDLE UPDATE POST
   const handleUpdate = async () => {
     try {
-      await axios.put(
-        `http://localhost:5000/api/posts/updatepost/${singlePost._id}`,
+      await axiosInstance.put(
+        `/posts/updatepost/${singlePost._id}`,
         {
           title: titleUpdate,
           desc: descUpdate,

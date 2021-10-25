@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./sidebar.css";
 
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/login Context/Context";
+import { axiosInstance } from "../../config";
 
 const Sidebar = () => {
   const { user } = useContext(Context);
@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get("/api/categories/getallcategories");
+      const res = await axiosInstance.get("/categories/getallcategories");
       setCategory(res.data);
     };
 

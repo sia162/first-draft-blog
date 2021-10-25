@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./write.css";
-import axios from "axios";
 // import { Context } from "../../../context/login Context/Context";
 
 import "../../../responsive/write-responsive.css";
+import { axiosInstance } from "../../../config";
 
 const Write = () => {
   // const { user } = useContext(Context);
@@ -34,7 +34,7 @@ const Write = () => {
       newPost.photo = filename;
 
       try {
-        await axios.post("/api/upload", data);
+        await axiosInstance.post("/upload", data);
       } catch (error) {
         console.error(error.message);
       }
@@ -42,7 +42,7 @@ const Write = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/posts/createpost`,
+        `https://first-draft-blog.herokuapp.com/api/posts/createpost`,
         {
           method: "POST",
           headers: {

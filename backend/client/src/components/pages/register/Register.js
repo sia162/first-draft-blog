@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./register.css";
-import axios from "axios";
 
 import "../../../responsive/register-responsive.css";
+import { axiosInstance } from "../../../config";
 
 const Register = () => {
   let [credentials, setCredentials] = useState({
@@ -24,7 +24,7 @@ const Register = () => {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axiosInstance.post("/auth/register", {
         username: credentials.username,
         email: credentials.email,
         password: credentials.password,

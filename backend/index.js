@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const connectToMongo = require("./database");
 connectToMongo();
@@ -36,6 +36,12 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
 app.use("/api/posts", require("./routes/posts"));
 app.use("/api/categories", require("./routes/categories"));
+
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`First Draft Backend listening at http://localhost:${port}`);
