@@ -21,13 +21,17 @@ const SingleBlog = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/api/posts/" + pathtopost);
-      setSinglePost(res.data);
-      setTitleUpdate(res.data.title);
-      setDescUpdate(res.data.desc);
+      try {
+        const res = await axios.get("/api/posts/" + pathtopost);
+        setSinglePost(res.data);
+        setTitleUpdate(res.data.title);
+        setDescUpdate(res.data.desc);
+      } catch (error) {
+        history.push("/notfound");
+      }
     };
     getPost();
-  }, [pathtopost]);
+  }, [pathtopost, history]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

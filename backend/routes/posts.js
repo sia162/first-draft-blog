@@ -48,8 +48,9 @@ router.get("/:id", async (req, res) => {
     let post = await Post.findById(req.params.id);
     res.status(200).json(post);
   } catch (error) {
+    let postNotFound = true;
     console.error(error.message);
-    res.status(500).send("Internal Server Error!");
+    res.status(500).send({ postNotFound });
   }
 });
 

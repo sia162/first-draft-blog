@@ -13,6 +13,7 @@ import Profile from "./components/pages/profile/Profile.js";
 import About from "./components/pages/about/About.js";
 
 import "./responsive/home-reponsive.css";
+import NotFound from "./components/pages/not-found-page/NotFound.js";
 
 function App() {
   const { user } = useContext(Context);
@@ -23,6 +24,10 @@ function App() {
         <Navbar />
 
         <Switch>
+          <Route exact path="/notfound">
+            <NotFound />
+          </Route>
+
           <Route exact path="/">
             <Home />
           </Route>
