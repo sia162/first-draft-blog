@@ -5,7 +5,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://first-draft-blog.herokuapp.com/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });

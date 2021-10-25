@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./singleblog.css";
 import { useLocation } from "react-router";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/login Context/Context";
 import { useHistory } from "react-router-dom";
 import { axiosInstance } from "../../config";
 
 const SingleBlog = () => {
-  const PF = "http://localhost:5000/images/"; //npm i path --> backend
+  const PF = "https://first-draft-blog.herokuapp.com/images/"; //npm i path --> backend
   let history = useHistory();
   const { user } = useContext(Context);
 

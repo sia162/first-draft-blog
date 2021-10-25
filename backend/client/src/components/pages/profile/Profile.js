@@ -4,7 +4,7 @@ import { axiosInstance } from "../../../config";
 import "./profile.css";
 
 const Profile = () => {
-  const PF = "http://localhost:5000/images/"; //npm i path --> backend
+  const PF = "https://first-draft-blog.herokuapp.com/images/"; //npm i path --> backend
 
   const [posts, setPosts] = useState([]);
 
@@ -40,7 +40,7 @@ const Profile = () => {
                 )}
                 <div className="post-info">
                   <div className="post-categories">
-                    {post.categories.map((cat) => {
+                    {[post.categories].map((cat) => {
                       return (
                         <span key={post._id} className="post-cat">
                           {cat}

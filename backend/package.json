@@ -15,10 +15,13 @@
     "nodemon": "^2.0.13",
     "path": "^0.12.7"
   },
+  "engines": {
+    "node": "v14.17.0"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "siya",
   "license": "ISC"
