@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
+const path = require("path");
 
 const connectToMongo = require("./database");
 connectToMongo();
@@ -22,7 +23,6 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("file has been uploaded");
 });
 
-const path = require("path");
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 // express package cors -> helps to fetch api from backend in frontend
@@ -37,11 +37,14 @@ app.use("/api/users", require("./routes/users"));
 app.use("/api/posts", require("./routes/posts"));
 app.use("/api/categories", require("./routes/categories"));
 
-app.use(express.static(path.join(__dirname, "/client/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-});
+  app.get("*", (req, res) => {
+    // res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(port, () => {
   console.log(`First Draft Backend listening at http://localhost:${port}`);

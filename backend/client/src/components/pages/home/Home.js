@@ -24,6 +24,7 @@ const Home = () => {
 
     fetchPosts();
   }, [search]);
+
   return (
     <>
       <Header />

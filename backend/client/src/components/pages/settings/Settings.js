@@ -9,7 +9,7 @@ import { axiosInstance } from "../../../config";
 const Settings = () => {
   const { user, dispatch } = useContext(Context);
   const [file, setFile] = useState(null);
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://first-draft-blog.herokuapp.com/images/";
   const [userUpdatedCreds, setUserUpdatedCreds] = useState({
     username: "",
     email: "",
@@ -81,7 +81,7 @@ const Settings = () => {
     if (deleteacc) {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/users/deleteuser/${user._id}`,
+          `https://first-draft-blog.herokuapp.com/api/users/deleteuser/${user._id}`,
           {
             method: "DELETE",
             headers: {
