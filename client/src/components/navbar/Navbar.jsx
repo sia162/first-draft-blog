@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div className="navnav">
       <div className="blogname">
         <h3>First Draft</h3>
         <h4>A BLOG FOR YOUR THOUGHTS</h4>
