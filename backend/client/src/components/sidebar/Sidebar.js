@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./sidebar.css";
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Context } from "../../context/login Context/Context";
-// import { axiosInstance } from "../../config";
+import { axiosInstance } from "../../config";
 
 const Sidebar = () => {
   const { user } = useContext(Context);
@@ -46,7 +46,7 @@ const Sidebar = () => {
       <div className="sidebar-items">
         <span className="sidebar-title">categories.</span>
         <ul className="sidebar-list">
-          {[category].map((cat) => {
+          {category.map((cat) => {
             return (
               <Link key={cat._id} to={`/?cat=${cat.name}`} className="link">
                 <li>{cat.name}</li>
