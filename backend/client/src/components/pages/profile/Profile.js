@@ -40,7 +40,7 @@ const Profile = () => {
                 )}
                 <div className="post-info">
                   <div className="post-categories">
-                    {[post.categories].map((cat) => {
+                    {post.categories.map((cat) => {
                       return (
                         <span key={post._id} className="post-cat">
                           {cat}
